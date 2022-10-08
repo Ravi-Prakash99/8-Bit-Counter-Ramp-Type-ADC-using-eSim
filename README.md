@@ -1,1 +1,1 @@
-# 8-Bit-Counter-Ramp-Type-ADC-using-eSim
+# 8-Bit-Counter/Ramp-Type-ADC-using-eSim
