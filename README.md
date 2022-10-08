@@ -1,12 +1,11 @@
 # 8-Bit-Counter/Ramp-Type-ADC-using-eSim
-This repository presents the mixed signal design of a SAR ADC. The Digital part of the circuit i.e SAR block and control block is simulated on Makerchip tool. All the Simulations are done using Esim and Makerchip tool only. Since the counter used is taken to be 8-Bit, the input voltage that can be converted to analog is limited to 0-3.3V. A 8-Bit Digital to Analog Converter (DAC) is used as an internal part, having the step size of 12.89mV.
+This repository presents the mixed signal design of a Ramp Type ADC. The Digital part of the circuit i.e Ramp Type Counter and And Gate is simulated on Makerchip tool. All the Simulations are done using Esim and Makerchip tool only. Since the counter used is taken to be 8-Bit, the input voltage that can be converted to analog is limited to 0-3.3V. A 8-Bit Digital to Analog Converter (DAC) is used as an internal part, having the step size of 12.89mV.
 
 # Table of Contents
 - [Introduction](#introduction)
 - [Tool Used](#tool-used)
 - [Reference Circuit Diagram](#reference-circuit-diagram)
 - [Expected Waveform](#expected-waveform)
-- [Approach](#approach)
 - [Schematic](#schematic)
 - [Verilog Code For Ramp Counter](#verilog-code-for-ramp-counter)
 - [Verilog Code for And Gate](#verilog-code-for-and-gate)
@@ -16,10 +15,15 @@ This repository presents the mixed signal design of a SAR ADC. The Digital part 
 - [Generation of Digital Block Model using Ngveri Tab](#generation-of-digital-block-model-using-ngveri-tab)
 - [Steps to Run Simulation of Project](#steps-to-run-simulation-of-project)
 - [Reference](#reference)
+- [Acknowledgement](#acknowledgement)
 - [Author](#author)
 
 # Introduction
-The world surrounding us has only analog signals which were utilised and analysed by the engineers before the digital era. In the digital era all the signals are digital in nature and hence the usage of analog to digital converters(adc's) has increased significantly. Digital domain provides the facilities of higher speeds, storage, high immunity to noise and what not. In order to have maximum benefits we need are adc's to be fast and efficient. SAR type adc is one of the fastest adc which can be designed. An SAR(Successive Approximation Register) block take only number of pulses equal to the number of bits. Where adc like counter type counts to 2 power N times, an SAR block does that in N pulses only.
+Analog to Digital Converter is an electronic device that converts the analog data into digital form. Due to various advantages of the digital signals over analog signals such as easy processing and storage. The analog signal are converted into digital signals and the processing is done, after processing the signal it is converted back to analog form to get the original output. In this conversion from Analog to Digital, ADCs plays a vital role.
+
+In this paper we will study about Counter type/ Ramp type ADC. It consists of following components such as: Counter, DAC, AND gate, Op-Amp. The block diagram of the Counter type/ Ramp type DAC is shown in the Reference Circuit.
+
+In Counter/Ramp type ADC, the analog voltage to be converted is applied to non-inverting terminal of the Op-Amp based comparator Circuit and the inverting terminal of comparator is connected to the output of the DAC. For the conversion, the binary counter is initially RESET and hence the output of the output of the DAC is 0V. The analog input applied to comparator is continuously compared with the DAC output during the conversion. If the analog input is greater than the DAC output, the comparator output is High and the counter is incremented and so the output from the DAC. Now again the DAC output is compared with the applied input if again input voltage (VA) is greater than the applied voltage, the counter is increment and so the DAC output. This process is repeated until the DAC output becomes greater than the applied input voltage by some threshold VT volts and the output of the comparator becomes Low. 
 
 # Tool Used
 ## eSim
@@ -49,9 +53,6 @@ For More Details Refer: https://www.veripool.org/verilator/
 
 # Expected Waveform
 ![ramp_adc](https://user-images.githubusercontent.com/65559674/194708654-d9d495e0-e7e3-4cf5-ac67-2bf5a848f248.PNG)
-
-# Approach
-The analog input voltage (VIN) is held constant. To implement the binary search algorithm, the N-bit register is first set to midscale (that is, 100... .00, where the MSB is set to 1). This forces the DAC output (VDAC) to be VREF/2, where VREF is the reference voltage provided to the ADC. A comparison is then performed to determine if VIN is less than, or greater than, VDAC. If VIN is greater than VDAC, the comparator output is a logic high, or 1, and the MSB of the N-bit register remains at 1. Conversely, if VIN is less than VDAC, the comparator output is a logic low and the MSB of the register is cleared to logic 0. The SAR control logic then moves to the next bit down, forces that bit high, and does another comparison. The sequence continues all the way down to the LSB. Once this is done, the conversion is complete and the N-bit digital word is available in the register.
 
 # Schematic
 ![circuit](https://user-images.githubusercontent.com/65559674/194708697-1a59d02b-0420-496e-8ce9-78bced5669e6.jpg)
@@ -158,7 +159,7 @@ plot v(dac_out) v(clk)/9+1 v(reset)/9+1.5
 ```
 
 # Result
-The Design and simulation of the SAR type ADC is finally done. The ouput has a very small error of around 1% which is quite minimal and in many inputs the output had close 0.1% error. The plots obtained are mathing the excepted waveforms.
+The Design and simulation of the Ramp type ADC is finally done. The ouput has a very small error of around 1% which is quite minimal and in many inputs the output had close 0.1% error. The plots obtained are mathing the excepted waveforms.
 
 # Generation of Digital Block Model using Ngveri Tab
 1. Open eSim
@@ -180,6 +181,12 @@ The Design and simulation of the SAR type ADC is finally done. The ouput has a v
 
 # Reference
 1. Design with operational amplifiers and analog integrated circuits / Sergio Franco, San Francisco State University. – Fourth edition.
-2. A. Sinha and S. K. Sen, "Design of an improved successive approximation type ADC using multi bit per cycle algorithm for conversion rate improvement.", 2014.
+2. https://www.elprocus.com/counter-type-adc-analog-to-digitalconverter/
+
+# Acknowledgement
+1. FOSSEE, IIT Bombay
+2. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
+3. Sumanto Kar, eSim Team, FOSSEE
+
 # Author
-Ravi Prakash Vishwakarma, Electronics and Communication Engineering Department, B.Tech Final Year, Madan Mohan Malaviya University of Technology, Gorakhour, U.P.
+Ravi Prakash Vishwakarma, Electronics and Communication Engineering Department, B.Tech Final Year, Madan Mohan Malaviya University of Technology, Gorakhpour, U.P.
