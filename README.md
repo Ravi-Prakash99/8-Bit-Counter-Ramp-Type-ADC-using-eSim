@@ -90,9 +90,8 @@ endmodule
 ```
 
 # Waveforms
-Vin = 0.9 0 9V
-Vin = 1.2 1 2V
-Vin = 2.4 2 4V
+![Screenshot (39)](https://user-images.githubusercontent.com/65559674/194724597-0fe8dbda-cbbf-4fbb-9587-f557d8d14f46.png)
+
 # Generated NetList
 ```
 * c:\users\lenovo\esim-workspace\ravi_adc\ravi_adc.cir
