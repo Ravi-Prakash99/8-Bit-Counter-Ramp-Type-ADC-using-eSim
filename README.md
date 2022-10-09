@@ -201,4 +201,4 @@ The Design and simulation of the Ramp type ADC is finally done. The ouput has a 
 3. Sumanto Kar, eSim Team, FOSSEE
 
 # Author
-Ravi Prakash Vishwakarma, Electronics and Communication Engineering Department, B.Tech Final Year, Madan Mohan Malaviya University of Technology, Gorakhpour, U.P.
+Ravi Prakash Vishwakarma, Electronics and Communication Engineering Department, B.Tech Final Year, Madan Mohan Malaviya University of Technology, Gorakhpur, U.P.
