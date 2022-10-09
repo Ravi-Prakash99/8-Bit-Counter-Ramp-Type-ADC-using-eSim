@@ -90,11 +90,20 @@ endmodule
 ```
 
 # Waveforms
+## 1. Vin = 1.2v
+- ### Reset Signal
 ![reset_high](https://user-images.githubusercontent.com/65559674/194744673-458282b9-7be2-4aec-9913-572de36bd628.jpg)
+- ### Clock Signal
 ![clock_high](https://user-images.githubusercontent.com/65559674/194744754-b510f640-366c-444f-8dc0-80f2cd721785.jpg)
+- ### Comparator Output
 ![comp_out_high](https://user-images.githubusercontent.com/65559674/194744852-4d763e33-b72b-4c51-992a-ea2c117c491e.jpg)
+- ### Analog Output Of Counter
 ![comp_high](https://user-images.githubusercontent.com/65559674/194744578-76f1b6eb-4638-46aa-b46b-21759ff03606.jpg)
-![Screenshot (39)](https://user-images.githubusercontent.com/65559674/194745012-b47baa14-f0dd-4749-9fe1-2d1436cbcf00.png)
+## 2. Vin = 0.2
+- ### Reset Signal, Clock Signal and Analog Output Of Counter
+![dac_out_low](https://user-images.githubusercontent.com/65559674/194745952-54cfc3f3-8c44-4ddb-a507-04b2663c973f.jpg)
+- ### Digital Output Of Counter
+![count_out_low](https://user-images.githubusercontent.com/65559674/194745960-c3cd9d9a-fa0c-4ee9-aa02-e537bda4ec52.PNG)
 
 # Generated NetList
 ```
