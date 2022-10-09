@@ -90,7 +90,11 @@ endmodule
 ```
 
 # Waveforms
-![Screenshot (39)](https://user-images.githubusercontent.com/65559674/194724597-0fe8dbda-cbbf-4fbb-9587-f557d8d14f46.png)
+![reset_high](https://user-images.githubusercontent.com/65559674/194744673-458282b9-7be2-4aec-9913-572de36bd628.jpg)
+![clock_high](https://user-images.githubusercontent.com/65559674/194744754-b510f640-366c-444f-8dc0-80f2cd721785.jpg)
+![comp_out_high](https://user-images.githubusercontent.com/65559674/194744852-4d763e33-b72b-4c51-992a-ea2c117c491e.jpg)
+![comp_high](https://user-images.githubusercontent.com/65559674/194744578-76f1b6eb-4638-46aa-b46b-21759ff03606.jpg)
+![Screenshot (39)](https://user-images.githubusercontent.com/65559674/194745012-b47baa14-f0dd-4749-9fe1-2d1436cbcf00.png)
 
 # Generated NetList
 ```
